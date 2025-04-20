@@ -1,0 +1,25 @@
+{
+  "name": "lit-animal-farm-rep",
+  "version": "1.0.0",
+  "description": "Animal Farm Repository for ELE LIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaboii/LIT-ANIMAL-FARM-REP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaboii/LIT-ANIMAL-FARM-REP/issues"
+  },
+  "homepage": "https://github.com/rafaboii/LIT-ANIMAL-FARM-REP#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
+
