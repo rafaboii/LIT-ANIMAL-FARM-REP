@@ -40,6 +40,7 @@
             margin-left: 20px;
             padding-bottom: 5px;
             position: relative;
+            display: inline-block;
         }
 
         /* Adding vertical lines between navigation links */
@@ -48,7 +49,7 @@
             border-right: 2px solid white; /* Vertical line between links */
         }
 
-        /* Adjust the underline to stay under text only */
+        /* Creating the underline effect */
         nav a::after {
             content: "";
             position: absolute;
@@ -62,7 +63,6 @@
             transform-origin: bottom right;
         }
 
-        /* On hover, apply the underline under the text only */
         nav a:hover::after {
             transform: scaleX(1);
             transform-origin: bottom left;
@@ -94,8 +94,8 @@
             cursor: pointer;
             margin-top: 20px;
             text-decoration: none;
+            background-color: #6a1b9a;
         }
-
         .cta-button:hover {
             background-color: #4a148c;
         }
@@ -107,9 +107,9 @@
 <header>
     <h1>Animal Farm: An Interactive Guide</h1>
     <nav>
-        <a href="#">Characters</a>
-        <a href="#">Themes</a>
-        <a href="#">Quotes</a>
+        <a href="Characters.html">Characters</a>
+        <a href="Themes.html">Themes</a>
+        <a href="Quotes.html">Quotes</a>
         <a href="#">Quiz</a>
     </nav>
 </header>
@@ -118,7 +118,7 @@
     <h2>History has been rewritten.</h2>
     <h2>Can you recall the truth?</h2>
     <br><br><br><br>
-    <a href="#" class="cta-button">Take the quiz now &gt;&gt;</a>
+    <a href="#" class="cta-button"><b>Take the quiz now &gt;&gt;</b></a>
 </div>
 
 </body>
