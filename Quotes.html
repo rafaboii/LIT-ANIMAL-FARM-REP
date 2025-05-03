@@ -24,6 +24,10 @@
         <h2>Quote Database</h2>
       </div>
       <div class="section-content">
+        <div class="search-container">
+          <input type="text" class="search-bar" id="quote-search" placeholder="Search quotes by text, character, or theme...">
+        </div>
+        
         <div class="quote-filters">
           <div class="filter-group">
             <span class="filter-label">Character:</span>
@@ -33,6 +37,8 @@
               <div class="filter-option">Squealer</div>
               <div class="filter-option">Boxer</div>
               <div class="filter-option">Old Major</div>
+              <div class="filter-option">Benjamin</div>
+              <div class="filter-option">Clover</div>
             </div>
           </div>
           <div class="filter-group">
@@ -43,55 +49,128 @@
               <div class="filter-option">Propaganda</div>
               <div class="filter-option">Revolution</div>
               <div class="filter-option">Inequality</div>
+              <div class="filter-option">Totalitarianism</div>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Chapter:</span>
+            <div class="filter-options">
+              <div class="filter-option active">All</div>
+              <div class="filter-option">1</div>
+              <div class="filter-option">2</div>
+              <div class="filter-option">3</div>
+              <div class="filter-option">4</div>
+              <div class="filter-option">5</div>
+              <div class="filter-option">6</div>
+              <div class="filter-option">7</div>
+              <div class="filter-option">8</div>
+              <div class="filter-option">9</div>
+              <div class="filter-option">10</div>
             </div>
           </div>
         </div>
 
-        <div class="quotes-grid">
-          <div class="quote-card">
+        <div class="quotes-grid" id="quotes-grid">
+          <div class="quote-card" data-character="Pigs" data-theme="Inequality" data-chapter="10">
             <div class="quote-text">"All animals are equal, but some animals are more equal than others."</div>
             <div class="quote-source">
               <span>Chapter 10</span>
               <span>Theme: Inequality</span>
             </div>
           </div>
-          <div class="quote-card">
+          <div class="quote-card" data-character="Sheep" data-theme="Propaganda" data-chapter="3">
             <div class="quote-text">"Four legs good, two legs bad."</div>
             <div class="quote-source">
               <span>Chapter 3</span>
               <span>Theme: Propaganda</span>
             </div>
           </div>
-          <div class="quote-card">
+          <div class="quote-card" data-character="Narrator" data-theme="Corruption" data-chapter="10">
             <div class="quote-text">"The creatures outside looked from pig to man, and from man to pig, and from pig to man again; but already it was impossible to say which was which."</div>
             <div class="quote-source">
               <span>Chapter 10</span>
               <span>Theme: Corruption</span>
             </div>
           </div>
-          <div class="quote-card">
+          <div class="quote-card" data-character="Boxer" data-theme="Revolution" data-chapter="3">
             <div class="quote-text">"I will work harder!"</div>
             <div class="quote-source">
               <span>Boxer</span>
               <span>Theme: Revolution</span>
             </div>
           </div>
-          <div class="quote-card">
+          <div class="quote-card" data-character="Old Major" data-theme="Revolution" data-chapter="1">
             <div class="quote-text">"Man is the only creature that consumes without producing."</div>
             <div class="quote-source">
               <span>Old Major</span>
               <span>Theme: Revolution</span>
             </div>
           </div>
-          <div class="quote-card">
+          <div class="quote-card" data-character="Pigs" data-theme="Corruption" data-chapter="6">
             <div class="quote-text">"No animal shall sleep in a bed with sheets."</div>
             <div class="quote-source">
               <span>Modified Commandment</span>
               <span>Theme: Corruption</span>
             </div>
           </div>
+          <div class="quote-card" data-character="Old Major" data-theme="Revolution" data-chapter="1">
+            <div class="quote-text">"All men are enemies. All animals are comrades."</div>
+            <div class="quote-source">
+              <span>Old Major</span>
+              <span>Theme: Revolution</span>
+            </div>
+          </div>
+          <div class="quote-card" data-character="Squealer" data-theme="Propaganda" data-chapter="5">
+            <div class="quote-text">"Surely, comrades, you do not want Jones back?"</div>
+            <div class="quote-source">
+              <span>Squealer</span>
+              <span>Theme: Propaganda</span>
+            </div>
+          </div>
+          <div class="quote-card" data-character="Napoleon" data-theme="Power" data-chapter="7">
+            <div class="quote-text">"Comrades, do you know who is responsible for this? Do you know the enemy who has come in the night and overthrown our windmill? SNOWBALL!"</div>
+            <div class="quote-source">
+              <span>Napoleon</span>
+              <span>Theme: Power</span>
+            </div>
+          </div>
+          <div class="quote-card" data-character="Benjamin" data-theme="Cynicism" data-chapter="3">
+            <div class="quote-text">"Donkeys live a long time. None of you has ever seen a dead donkey."</div>
+            <div class="quote-source">
+              <span>Benjamin</span>
+              <span>Theme: Cynicism</span>
+            </div>
+          </div>
+          <div class="quote-card" data-character="Clover" data-theme="Disillusionment" data-chapter="7">
+            <div class="quote-text">"If she herself had had any picture of the future, it had been of a society of animals set free from hunger and the whip, all equal, each working according to his capacity, the strong protecting the weak."</div>
+            <div class="quote-source">
+              <span>Clover</span>
+              <span>Theme: Disillusionment</span>
+            </div>
+          </div>
+          <div class="quote-card" data-character="Boxer" data-theme="Loyalty" data-chapter="5">
+            <div class="quote-text">"Napoleon is always right."</div>
+            <div class="quote-source">
+              <span>Boxer</span>
+              <span>Theme: Loyalty</span>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Quote Modal -->
+  <div class="quote-modal" id="quote-modal">
+    <div class="quote-modal-content">
+      <span class="close-modal" onclick="closeQuoteModal()">&times;</span>
+      <div class="modal-quote-text" id="modal-quote-text"></div>
+      <div class="modal-quote-details">
+        <div><span>Character: </span><span id="modal-character"></span></div>
+        <div><span>Chapter: </span><span id="modal-chapter"></span></div>
+        <div><span>Theme: </span><span id="modal-theme"></span></div>
+      </div>
+      <div class="modal-quote-context" id="modal-context"></div>
     </div>
   </div>
 

@@ -1,39 +1,52 @@
 // Carousel functionality
-let index = 0;
-const totalSlides = document.querySelectorAll('.slide').length;
-const indicatorsContainer = document.getElementById('indicators');
+let currentSlide = 0;
+const totalSlides = 4;
 
-// Create indicators
-for (let i = 0; i < totalSlides; i++) {
-  const indicator = document.createElement('div');
-  indicator.className = 'indicator' + (i === 0 ? ' active' : '');
-  indicator.onclick = () => showSlide(i);
-  indicatorsContainer.appendChild(indicator);
+// Initialize carousel
+document.addEventListener('DOMContentLoaded', function() {
+  createIndicators();
+  updateIndicators();
+});
+
+function createIndicators() {
+  const indicatorsContainer = document.getElementById('indicators');
+  for (let i = 0; i < totalSlides; i++) {
+    const indicator = document.createElement('div');
+    indicator.className = 'indicator';
+    indicator.onclick = function() {
+      goToSlide(i);
+    };
+    indicatorsContainer.appendChild(indicator);
+  }
 }
 
-function showSlide(i) {
-  const slides = document.getElementById('slides');
+function updateIndicators() {
   const indicators = document.querySelectorAll('.indicator');
-  
-  // Update index
-  index = (i + totalSlides) % totalSlides;
-  
-  // Update slide position
-  slides.style.transform = 'translateX(' + (-index * 25) + '%)';
-  
-  // Update indicators
-  indicators.forEach((ind, idx) => {
-    ind.className = 'indicator' + (idx === index ? ' active' : '');
+  indicators.forEach((indicator, index) => {
+    if (index === currentSlide) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
   });
 }
 
+function goToSlide(slideIndex) {
+  currentSlide = slideIndex;
+  const slides = document.getElementById('slides');
+  slides.style.transform = `translateX(-${currentSlide * 25}%)`;
+  updateIndicators();
+}
+
 function nextSlide() {
-  showSlide(index + 1);
+  currentSlide = (currentSlide + 1) % totalSlides;
+  goToSlide(currentSlide);
 }
 
 function prevSlide() {
-  showSlide(index - 1);
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  goToSlide(currentSlide);
 }
 
-// Auto-play carousel every 7 seconds
-setInterval(() => nextSlide(), 7000);
+// Auto-advance slides every 7 seconds
+setInterval(nextSlide, 7000);

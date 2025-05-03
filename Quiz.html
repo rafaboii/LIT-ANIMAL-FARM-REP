@@ -25,6 +25,12 @@
       </div>
       <div class="section-content">
         <div class="quiz-container">
+          <div class="quiz-difficulty">
+            <button class="difficulty-btn active" data-difficulty="easy" onclick="setDifficulty('easy')">Easy</button>
+            <button class="difficulty-btn locked" data-difficulty="medium" onclick="setDifficulty('medium')">Medium</button>
+            <button class="difficulty-btn locked" data-difficulty="hard" onclick="setDifficulty('hard')">Hard</button>
+          </div>
+          
           <div class="quiz-progress">
             <div class="quiz-progress-bar" id="quiz-progress"></div>
           </div>
@@ -33,19 +39,19 @@
             <div class="quiz-question">
               <h3>1. Which character represents Leon Trotsky in Animal Farm?</h3>
               <div class="quiz-options">
-                <div class="quiz-option" onclick="selectOption(this)">
+                <div class="quiz-option" onclick="selectOption(this, 0)">
                   <div class="option-marker">A</div>
                   <div>Napoleon</div>
                 </div>
-                <div class="quiz-option" onclick="selectOption(this)">
+                <div class="quiz-option" onclick="selectOption(this, 1)">
                   <div class="option-marker">B</div>
                   <div>Snowball</div>
                 </div>
-                <div class="quiz-option" onclick="selectOption(this)">
+                <div class="quiz-option" onclick="selectOption(this, 2)">
                   <div class="option-marker">C</div>
                   <div>Boxer</div>
                 </div>
-                <div class="quiz-option" onclick="selectOption(this)">
+                <div class="quiz-option" onclick="selectOption(this, 3)">
                   <div class="option-marker">D</div>
                   <div>Squealer</div>
                 </div>
