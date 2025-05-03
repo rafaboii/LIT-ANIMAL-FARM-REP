@@ -1,126 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Farm: An Interactive Guide</title>
-    <style>
-        body {
-            font-family: Garamond;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            background-color: #97171d;
-            padding: 15px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            padding-bottom: 5px;
-            position: relative;
-        }
-
-        /* Adding vertical lines between navigation links */
-        nav a:not(:last-child) {
-            padding-right: 20px; /* Adding space for the border */
-            border-right: 2px solid white; /* Vertical line between links */
-        }
-
-        /* Adjust the underline to stay under text only */
-        nav a::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: white;
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-            transform-origin: bottom right;
-        }
-
-        /* On hover, apply the underline under the text only */
-        nav a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        .main-content {
-            background-image: url('images/oink.webp'); 
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            padding: 80px 20px;
-            height: 100vh; /* Full viewport height */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .main-content h2 {
-            color: white;
-            font-size: 80px;
-            margin: 0;
-        }
-
-        .cta-button {
-            color: white;
-            padding: 15px 30px;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-            text-decoration: none;
-            background-color: #ba3d3d;
-        }
-
-        .cta-button:hover {
-            background-color: #4a148c;
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Character Bio - Animal Farm: An Interactive Guide</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-    <h1>Animal Farm: An Interactive Guide</h1>
+  <header>
+    <h1><a href="index.html">Animal Farm: An Interactive Guide</a></h1>
     <nav>
-        <a href="#">Characters</a>
-        <a href="Themes.html">Themes</a>
-        <a href="Quotes.html">Quotes</a>
-        <a href="Quiz.html">Quiz</a>
+      <a href="characters.html" class="active">Characters</a>
+      <a href="themes.html">Themes</a>
+      <a href="quotes.html">Quotes</a>
+      <a href="quiz.html">Quiz</a>
     </nav>
-</header>
+  </header>
 
-<div class="main-content">
-    <h2>Every face hides a motive.</h2>
-    <h2>Know who truly holds the whip.</h2>
-    <br><br><br><br>
-    <a href="character-bio.html" class="cta-button"><b>Open Character Bio &gt;&gt;</b></a>
-</div>
+  <div class="main-content">
+    <!-- Character Bio Section -->
+    <div id="characters" class="section">
+      <div class="section-header">
+        <h2>Character Bio</h2>
+      </div>
+      <div class="section-content character-bio">
+        <div class="character-list">
+          <ul id="character-list">
+            <li class="active" data-character="napoleon">Napoleon</li>
+            <li data-character="snowball">Snowball</li>
+            <li data-character="boxer">Boxer</li>
+            <li data-character="clover">Clover</li>
+            <li data-character="benjamin">Benjamin</li>
+            <li data-character="squealer">Squealer</li>
+            <li data-character="mollie">Mollie</li>
+            <li data-character="mrjones">Mr. Jones</li>
+          </ul>
+        </div>
+        <div class="character-details" id="character-details">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg" alt="Napoleon" class="character-image">
+          <div class="character-info">
+            <h3>Napoleon</h3>
+            <p>Napoleon is a large, fierce-looking Berkshire boar who is the main antagonist of Animal Farm. Based on Joseph Stalin, Napoleon uses military force (his nine loyal attack dogs) to intimidate the other animals and consolidate his power.</p>
+            <p>Key characteristics:</p>
+            <ul>
+              <li>Manipulative and cunning</li>
+              <li>Power-hungry and ruthless</li>
+              <li>Excellent strategic thinker</li>
+              <li>Gradually adopts human behaviors he once condemned</li>
+            </ul>
+            <p>Napoleon represents the corrupt leadership that betrays the revolution's ideals. He gradually changes the Seven Commandments to benefit himself and the other pigs, ultimately becoming indistinguishable from the humans the animals sought to overthrow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="back-to-home">
+    <a href="index.html">Back to Home</a>
+  </div>
+
+  <script src="characters.js"></script>
 </body>
 </html>

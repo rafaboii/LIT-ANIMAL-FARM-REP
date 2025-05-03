@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animal Farm: An Interactive Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Animal Farm: An Interactive Guide</a></h1>
+    <nav>
+      <a href="characters.html">Characters</a>
+      <a href="themes.html">Themes</a>
+      <a href="quotes.html">Quotes</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
+  </header>
+
+  <!-- Carousel Section -->
+  <div class="carousel-container">
+    <div class="carousel-slide" id="slides">
+      <div class="slide">
+        <h2>Power is not taken.<br>It is built, one lie at a time.</h2>
+        <a href="themes.html" class="cta-button"><b>Go to thematic analysis &gt;&gt;</b></a>
+      </div>
+      <div class="slide">
+        <h2>Words are weapons.<br>Learn to wield them.</h2>
+        <a href="quotes.html" class="cta-button"><b>Open Quote Database &gt;&gt;</b></a>
+      </div>
+      <div class="slide">
+        <h2>Every face hides a motive.<br>Know who truly holds the whip.</h2>
+        <a href="characters.html" class="cta-button"><b>Open Character Bio &gt;&gt;</b></a>
+      </div>
+      <div class="slide">
+        <h2>History has been rewritten.<br>Can you recall the truth?</h2>
+        <a href="quiz.html" class="cta-button"><b>Take the quiz now &gt;&gt;</b></a>
+      </div>
+    </div>
+    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+    <div class="carousel-indicators" id="indicators"></div>
+  </div>
+
+  <script src="carousel.js"></script>
+</body>
+</html>
