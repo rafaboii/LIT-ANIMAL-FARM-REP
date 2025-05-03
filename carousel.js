@@ -1,52 +1,85 @@
-// Carousel functionality
-let currentSlide = 0;
-const totalSlides = 4;
-
-// Initialize carousel
-document.addEventListener('DOMContentLoaded', function() {
-  createIndicators();
-  updateIndicators();
-});
-
-function createIndicators() {
-  const indicatorsContainer = document.getElementById('indicators');
-  for (let i = 0; i < totalSlides; i++) {
-    const indicator = document.createElement('div');
-    indicator.className = 'indicator';
-    indicator.onclick = function() {
-      goToSlide(i);
-    };
-    indicatorsContainer.appendChild(indicator);
-  }
-}
-
-function updateIndicators() {
-  const indicators = document.querySelectorAll('.indicator');
-  indicators.forEach((indicator, index) => {
-    if (index === currentSlide) {
-      indicator.classList.add('active');
-    } else {
-      indicator.classList.remove('active');
+// Carousel functionality for index page
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide")
+    const indicators = document.getElementById("indicators")
+    let currentSlide = 0
+    let slideInterval
+    const intervalTime = 5000 // Time between automatic slides (5 seconds)
+  
+    // Create indicator dots
+    function createIndicators() {
+      for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement("div")
+        dot.classList.add("indicator")
+        if (i === 0) dot.classList.add("active")
+        dot.addEventListener("click", () => {
+          goToSlide(i)
+          resetInterval()
+        })
+        indicators.appendChild(dot)
+      }
     }
-  });
-}
-
-function goToSlide(slideIndex) {
-  currentSlide = slideIndex;
-  const slides = document.getElementById('slides');
-  slides.style.transform = `translateX(-${currentSlide * 25}%)`;
-  updateIndicators();
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  goToSlide(currentSlide);
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  goToSlide(currentSlide);
-}
-
-// Auto-advance slides every 7 seconds
-setInterval(nextSlide, 7000);
+  
+    // Show a specific slide
+    function goToSlide(n) {
+      // Hide current slide
+      slides[currentSlide].classList.remove("active")
+      document.querySelectorAll(".indicator")[currentSlide].classList.remove("active")
+  
+      // Update current slide
+      currentSlide = (n + slides.length) % slides.length
+  
+      // Show new slide
+      slides[currentSlide].classList.add("active")
+      document.querySelectorAll(".indicator")[currentSlide].classList.add("active")
+  
+      // Update slide position
+      document.getElementById("slides").style.transform = `translateX(-${currentSlide * 25}%)`
+    }
+  
+    // Next slide function
+    function nextSlide() {
+      goToSlide(currentSlide + 1)
+    }
+  
+    // Previous slide function
+    window.prevSlide = () => {
+      goToSlide(currentSlide - 1)
+    }
+  
+    // Next slide function (exposed to window for onclick)
+    window.nextSlide = () => {
+      goToSlide(currentSlide + 1)
+      resetInterval()
+    }
+  
+    // Reset interval timer
+    function resetInterval() {
+      clearInterval(slideInterval)
+      slideInterval = setInterval(nextSlide, intervalTime)
+    }
+  
+    // Initialize carousel
+    function initCarousel() {
+      createIndicators()
+  
+      // Add active class to first slide
+      slides[0].classList.add("active")
+  
+      // Set up automatic sliding
+      slideInterval = setInterval(nextSlide, intervalTime)
+  
+      // Add fade-in animation to all slides
+      slides.forEach((slide) => {
+        slide.style.opacity = 0
+        setTimeout(() => {
+          slide.style.opacity = 1
+          slide.style.transition = "opacity 0.5s ease-in-out"
+        }, 100)
+      })
+    }
+  
+    // Initialize on page load
+    initCarousel()
+  })
+  
