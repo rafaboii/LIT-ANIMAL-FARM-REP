@@ -1,168 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Farm: An Interactive Guide - Character Bio</title>
-    <style>
-        body {
-            font-family: Garamond;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        header {
-            background-color: #97171d;
-            padding: 15px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            padding-bottom: 5px;
-            position: relative;
-        }
-
-        nav a:not(:last-child) {
-            padding-right: 20px;
-            border-right: 2px solid white;
-        }
-
-        .main-content {
-            display: flex;
-            padding: 40px;
-        }
-
-        .character-list {
-            width: 20%;
-            padding-right: 20px;
-        }
-
-        .character-list a {
-            display: block;
-            padding: 10px;
-            color: #97171d;
-            text-decoration: none;
-            font-size: 20px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        .character-list a:hover {
-            background-color: #ddd;
-        }
-
-        .character-bio {
-            width: 70%;
-            padding-left: 20px;
-        }
-
-        .character-bio h2 {
-            font-size: 40px;
-            color: #97171d;
-        }
-
-        .character-bio p {
-            font-size: 18px;
-            color: #333;
-        }
-
-        .character-bio img {
-            max-width: 400px;
-            margin-top: 20px;
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Farm: An Interactive Guide - Character Bio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header>
-    <h1>Animal Farm: An Interactive Guide</h1>
-    <nav>
-        <a href="Characters.html">Characters</a>
-        <a href="Themes.html">Themes</a>
-        <a href="Quotes.html">Quotes</a>
-        <a href="Quiz.html">Quiz</a>
-    </nav>
-</header>
-
-<div class="main-content">
-    <!-- Character List -->
-    <div class="character-list">
-        <a href="#" onclick="showCharacter('benjamin')">Benjamin</a>
-        <a href="#" onclick="showCharacter('boxer')">Boxer</a>
-        <a href="#" onclick="showCharacter('clover')">Clover</a>
-        <a href="#" onclick="showCharacter('frederick')">Frederick</a>
-        <a href="#" onclick="showCharacter('jessie')">Jessie</a>
-        <a href="#" onclick="showCharacter('minimus')">Minimus</a>
-        <a href="#" onclick="showCharacter('mollie')">Mollie</a>
+  <header>
+    <div class="header-content">
+      <h1><a href="index.html">Animal Farm: An Interactive Guide</a></h1>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="characters.html" class="active">Characters</a>
+        <a href="themes.html">Themes</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Character Bio Display -->
-    <div class="character-bio" id="character-bio">
+  <div class="main-content">
+    <div class="section">
+      <div class="section-header">
         <h2>Character Bio</h2>
-        <p>Click on a character to view their bio and image.</p>
-        <img id="character-image" src="" alt="" style="display: none;">
-        <p id="character-description"></p>
+      </div>
+      <div class="section-content">
+        <!-- Character List -->
+        <div class="character-bio">
+          <div class="character-list">
+            <a href="#" onclick="showCharacter('benjamin')" class="character-link">Benjamin</a>
+            <a href="#" onclick="showCharacter('boxer')" class="character-link">Boxer</a>
+            <a href="#" onclick="showCharacter('clover')" class="character-link">Clover</a>
+            <a href="#" onclick="showCharacter('frederick')" class="character-link">Frederick</a>
+            <a href="#" onclick="showCharacter('jessie')" class="character-link">Jessie</a>
+            <a href="#" onclick="showCharacter('minimus')" class="character-link">Minimus</a>
+            <a href="#" onclick="showCharacter('mollie')" class="character-link">Mollie</a>
+          </div>
+
+          <!-- Character Bio Display -->
+          <div class="character-details" id="character-bio">
+            <h3>Character Bio</h3>
+            <p>Click on a character to view their bio and image.</p>
+            <img id="character-image" src="/placeholder.svg" alt="" style="display: none;" class="character-image">
+            <p id="character-description" class="character-info"></p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<script>
+  <div class="back-to-home">
+    <a href="index.html">Back to Home</a>
+  </div>
+
+  <footer>
+    <p>© 2023 Animal Farm: An Interactive Guide. For educational purposes only.</p>
+    <p>Created as a learning resource for students and educators.</p>
+  </footer>
+
+  <script>
     function showCharacter(character) {
-        var bioText = '';
-        var imageUrl = '';
-        var bio = document.getElementById('character-description');
-        var image = document.getElementById('character-image');
-        
-        // Character bio and image data
-        if (character === 'benjamin') {
-            bioText = 'Benjamin is the oldest animal on the farm and one of the few who seems to retain a memory of life before and after the revolution with equal clarity. A donkey of few words, Benjamin is deeply cynical and detached...';
-            imageUrl = 'path_to_benjamin_image.jpg'; // replace with actual path
-        } else if (character === 'boxer') {
-            bioText = 'Boxer is a loyal and hardworking horse who represents the proletariat working class. His main motto is "I will work harder."...';
-            imageUrl = 'try.jpg'; // replace with actual path
-        } else if (character === 'clover') {
-            bioText = 'Clover is a gentle and caring horse who is loyal to the cause. She represents the mothers and caregivers of the working class...';
-            imageUrl = 'path_to_clover_image.jpg'; // replace with actual path
-        } else if (character === 'frederick') {
-            bioText = 'Frederick is a farmer who represents the capitalist oppressors. He is cunning and often exploits others...';
-            imageUrl = 'path_to_frederick_image.jpg'; // replace with actual path
-        } else if (character === 'jessie') {
-            bioText = 'Jessie is a dog who plays an important role in the revolution, representing the intelligent working class...';
-            imageUrl = 'path_to_jessie_image.jpg'; // replace with actual path
-        } else if (character === 'minimus') {
-            bioText = 'Minimus is a pig who serves as Napoleon\'s personal poet and musician...';
-            imageUrl = 'path_to_minimus_image.jpg'; // replace with actual path
-        } else if (character === 'mollie') {
-            bioText = 'Mollie is a vain and self-centered horse who represents the bourgeoisie class that is more concerned with material wealth than with the revolution...';
-            imageUrl = 'path_to_mollie_image.jpg'; // replace with actual path
+      var bioText = '';
+      var imageUrl = '';
+      var bio = document.getElementById('character-description');
+      var image = document.getElementById('character-image');
+      
+      // Character bio and image data
+      if (character === 'benjamin') {
+        bioText = 'Benjamin is the oldest animal on the farm and one of the few who seems to retain a memory of life before and after the revolution with equal clarity. A donkey of few words, Benjamin is deeply cynical and detached...';
+        imageUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg'; 
+      } else if (character === 'boxer') {
+        bioText = 'Boxer is a loyal and hardworking horse who represents the proletariat working class. His main motto is "I will work harder."...';
+        imageUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg'; 
+      } else if (character === 'clover') {
+        bioText = 'Clover is a gentle and caring horse who is loyal to the cause. She represents the mothers and caregivers of the working class...';
+        imageUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg'; 
+      } else if (character === 'frederick') {
+        bioText = 'Frederick is a farmer who represents the capitalist oppressors. He is cunning and often exploits others...';
+        imageUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg'; 
+      } else if (character === 'jessie') {
+        bioText = 'Jessie is a dog who plays an important role in the revolution, representing the intelligent working class...';
+        imageUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg'; 
+      } else if (character === 'minimus') {
+        bioText = 'Minimus is a pig who serves as Napoleon\'s personal poet and musician...';
+        imageUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg'; 
+      } else if (character === 'mollie') {
+        bioText = 'Mollie is a vain and self-centered horse who represents the bourgeoisie class that is more concerned with material wealth than with the revolution...';
+        imageUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg'; 
+      }
+      
+      // Display the character bio and image
+      bio.textContent = bioText;
+      image.src = imageUrl;
+      image.style.display = 'block'; // Show the image
+      
+      // Add active class to selected character
+      const links = document.querySelectorAll('.character-link');
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.textContent.toLowerCase() === character) {
+          link.classList.add('active');
         }
-        
-        // Display the character bio and image
-        bio.textContent = bioText;
-        image.src = imageUrl;
-        image.style.display = 'block'; // Show the image
+      });
+      
+      // Add animation
+      image.style.opacity = '0';
+      bio.style.opacity = '0';
+      
+      setTimeout(() => {
+        image.style.transition = 'opacity 0.5s ease';
+        bio.style.transition = 'opacity 0.5s ease';
+        image.style.opacity = '1';
+        bio.style.opacity = '1';
+      }, 50);
     }
-</script>
-
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const navMenu = document.querySelector('nav');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('mobile-open');
+          menuToggle.classList.toggle('open');
+        });
+      }
+      
+      // Add active class styling to character links
+      const characterLinks = document.querySelectorAll('.character-link');
+      characterLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          characterLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>

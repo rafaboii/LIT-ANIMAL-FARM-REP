@@ -5,16 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quote Database - Animal Farm: An Interactive Guide</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1><a href="index.html">Animal Farm: An Interactive Guide</a></h1>
-    <nav>
-      <a href="characters.html">Characters</a>
-      <a href="themes.html">Themes</a>
-      <a href="quotes.html" class="active">Quotes</a>
-      <a href="quiz.html">Quiz</a>
-    </nav>
+    <div class="header-content">
+      <h1><a href="index.html">Animal Farm: An Interactive Guide</a></h1>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="characters.html">Characters</a>
+        <a href="themes.html">Themes</a>
+        <a href="quotes.html" class="active">Quotes</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
+    </div>
   </header>
 
   <div class="main-content">
@@ -163,34 +173,6 @@
               <span>Theme: Loyalty</span>
             </div>
           </div>
-          <div class="quote-card" data-character="Old Major" data-theme="Revolution" data-chapter="1">
-            <div class="quote-text">"Beasts of England, beasts of Ireland, Beasts of every land and clime, Hearken to my joyful tidings Of the golden future time."</div>
-            <div class="quote-source">
-              <span>Old Major</span>
-              <span>Theme: Revolution</span>
-            </div>
-          </div>
-          <div class="quote-card" data-character="Snowball" data-theme="Revolution" data-chapter="4">
-            <div class="quote-text">"The only good human being is a dead one."</div>
-            <div class="quote-source">
-              <span>Snowball</span>
-              <span>Theme: Revolution</span>
-            </div>
-          </div>
-          <div class="quote-card" data-character="Benjamin" data-theme="Cynicism" data-chapter="5">
-            <div class="quote-text">"Windmill or no windmill, life would go on as it had always gone on—that is, badly."</div>
-            <div class="quote-source">
-              <span>Benjamin</span>
-              <span>Theme: Cynicism</span>
-            </div>
-          </div>
-          <div class="quote-card" data-character="Snowball" data-theme="Revolution" data-chapter="2">
-            <div class="quote-text">"Can you not understand that liberty is worth more than ribbons?"</div>
-            <div class="quote-source">
-              <span>Snowball to Mollie</span>
-              <span>Theme: Revolution</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -213,6 +195,11 @@
   <div class="back-to-home">
     <a href="index.html">Back to Home</a>
   </div>
+
+  <footer>
+    <p>© 2023 Animal Farm: An Interactive Guide. For educational purposes only.</p>
+    <p>Created as a learning resource for students and educators.</p>
+  </footer>
 
   <script src="quotes.js"></script>
 </body>

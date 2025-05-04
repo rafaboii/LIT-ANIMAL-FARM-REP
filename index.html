@@ -7,45 +7,55 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <meta name="description" content="An interactive guide to George Orwell's Animal Farm, featuring character analysis, thematic exploration, and quizzes.">
 </head>
 <body>
   <header>
-    <h1><a href="index.html">Animal Farm: An Interactive Guide</a></h1>
-    <nav>
-      <a href="characters.html">Characters</a>
-      <a href="themes.html">Themes</a>
-      <a href="quotes.html">Quotes</a>
-      <a href="quiz.html">Quiz</a>
-    </nav>
+    <div class="header-content">
+      <h1><a href="index.html">Animal Farm: An Interactive Guide</a></h1>
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="characters.html">Characters</a>
+        <a href="themes.html">Themes</a>
+        <a href="quotes.html">Quotes</a>
+        <a href="quiz.html">Quiz</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Carousel Section -->
   <div class="carousel-container">
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
     <div class="carousel-slide" id="slides">
       <div class="slide">
         <div class="slide-content">
           <h2>Power is not taken.<br>It is built, one lie at a time.</h2>
-          <a href="themes.html" class="cta-button"><b>Go to thematic analysis &gt;&gt;</b></a>
+          <a href="themes.html" class="cta-button"><span class="btn-text">Go to thematic analysis</span><span class="btn-icon">→</span></a>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
           <h2>Words are weapons.<br>Learn to wield them.</h2>
-          <a href="quotes.html" class="cta-button"><b>Open Quote Database &gt;&gt;</b></a>
+          <a href="quotes.html" class="cta-button"><span class="btn-text">Open Quote Database</span><span class="btn-icon">→</span></a>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
           <h2>Every face hides a motive.<br>Know who truly holds the whip.</h2>
-          <a href="characters.html" class="cta-button"><b>Open Character Bio &gt;&gt;</b></a>
+          <a href="characters.html" class="cta-button"><span class="btn-text">Open Character Bio</span><span class="btn-icon">→</span></a>
         </div>
       </div>
       <div class="slide">
         <div class="slide-content">
           <h2>History has been rewritten.<br>Can you recall the truth?</h2>
-          <a href="quiz.html" class="cta-button"><b>Take the quiz now &gt;&gt;</b></a>
+          <a href="quiz.html" class="cta-button"><span class="btn-text">Take the quiz now</span><span class="btn-icon">→</span></a>
         </div>
       </div>
     </div>
@@ -56,7 +66,7 @@
 
   <!-- Main Content Sections -->
   <div class="main-content">
-    <div class="section">
+    <div class="section animate-on-scroll">
       <div class="section-header">
         <h2>Welcome to Animal Farm: An Interactive Guide</h2>
       </div>
@@ -66,43 +76,121 @@
             <h3>Explore Orwell's Classic Allegory</h3>
             <p>Published in 1945, George Orwell's Animal Farm is a powerful allegory that reflects events leading up to the Russian Revolution and the Stalinist era of the Soviet Union.</p>
             <p>Through the story of farm animals who rebel against their human farmer, Orwell explores themes of totalitarianism, corruption, and the manipulation of language for political control.</p>
+            <div class="quote-highlight">
+              <p>"All animals are equal, but some animals are more equal than others."</p>
+            </div>
             <p>This interactive guide helps you explore the characters, themes, and historical parallels that make Animal Farm one of the most important political satires ever written.</p>
           </div>
           <div class="welcome-image">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/farm-illustration-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg" alt="Animal Farm Illustration" class="rounded-image">
+            <div class="image-frame">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/farm-illustration-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg" alt="Animal Farm Illustration" class="rounded-image">
+              <div class="image-caption">The animals of Manor Farm</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="features-grid">
+    <div class="features-grid animate-on-scroll">
       <a href="characters.html" class="feature-card">
-        <div class="feature-icon">👤</div>
+        <div class="feature-icon">
+          <div class="icon-animation">👤</div>
+        </div>
         <h3>Character Profiles</h3>
         <p>Explore detailed profiles of each character and their historical parallels.</p>
       </a>
       <a href="themes.html" class="feature-card">
-        <div class="feature-icon">💡</div>
+        <div class="feature-icon">
+          <div class="icon-animation">💡</div>
+        </div>
         <h3>Thematic Analysis</h3>
         <p>Dive deep into the major themes of power, corruption, and propaganda.</p>
       </a>
       <a href="quotes.html" class="feature-card">
-        <div class="feature-icon">💬</div>
+        <div class="feature-icon">
+          <div class="icon-animation">💬</div>
+        </div>
         <h3>Quote Database</h3>
         <p>Search and explore significant quotes with context and analysis.</p>
       </a>
       <a href="quiz.html" class="feature-card">
-        <div class="feature-icon">❓</div>
+        <div class="feature-icon">
+          <div class="icon-animation">❓</div>
+        </div>
         <h3>Knowledge Quiz</h3>
         <p>Test your understanding with quizzes of varying difficulty levels.</p>
       </a>
     </div>
 
-    <div class="quote-banner">
-      <blockquote>
-        "All animals are equal, but some animals are more equal than others."
-      </blockquote>
-      <cite>— George Orwell, Animal Farm</cite>
+    <div class="timeline-section animate-on-scroll">
+      <h2>Key Events Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>The Rebellion</h3>
+            <p>The animals overthrow Mr. Jones and take control of the farm.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Seven Commandments</h3>
+            <p>The principles of Animalism are established as law.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Battle of the Cowshed</h3>
+            <p>The animals successfully defend the farm against human attackers.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Snowball's Expulsion</h3>
+            <p>Napoleon seizes power by driving Snowball from the farm.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>The Windmill</h3>
+            <p>Construction begins, representing industrialization and progress.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>The Purges</h3>
+            <p>Animals confess to crimes and are executed by Napoleon's dogs.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Boxer's Fate</h3>
+            <p>The loyal workhorse is sent to the knacker's after his collapse.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Pigs and Humans</h3>
+            <p>The final transformation as pigs become indistinguishable from humans.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-banner animate-on-scroll">
+      <div class="quote-banner-inner">
+        <blockquote>
+          "The creatures outside looked from pig to man, and from man to pig, and from pig to man again; but already it was impossible to say which was which."
+        </blockquote>
+        <cite>— George Orwell, Animal Farm</cite>
+      </div>
     </div>
   </div>
 
