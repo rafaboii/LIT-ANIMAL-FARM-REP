@@ -35,6 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update slide position
     document.getElementById("slides").style.transform = `translateX(-${currentSlide * 25}%)`
+    
+    // Show CTA button for active slide
+    slides.forEach((slide, index) => {
+      const ctaButton = slide.querySelector(".cta-button")
+      if (index === currentSlide) {
+        ctaButton.style.opacity = "1"
+        ctaButton.style.transform = "translateY(0)"
+      } else {
+        ctaButton.style.opacity = "0"
+        ctaButton.style.transform = "translateY(20px)"
+      }
+    })
   }
 
   // Next slide function
@@ -45,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Previous slide function
   window.prevSlide = () => {
     goToSlide(currentSlide - 1)
+    resetInterval()
   }
 
   // Next slide function (exposed to window for onclick)
@@ -65,6 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add active class to first slide
     slides[0].classList.add("active")
+    
+    // Show CTA button for first slide
+    const firstCta = slides[0].querySelector(".cta-button")
+    if (firstCta) {
+      firstCta.style.opacity = "1"
+      firstCta.style.transform = "translateY(0)"
+    }
 
     // Set up automatic sliding
     slideInterval = setInterval(nextSlide, intervalTime)

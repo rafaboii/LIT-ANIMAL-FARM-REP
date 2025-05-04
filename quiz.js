@@ -138,6 +138,7 @@ let currentDifficulty = "easy"
 let currentQuestion = 0
 let score = 0
 let answered = false
+let quizStarted = false
 const completedLevels = {
   easy: false,
   medium: false,
@@ -146,12 +147,9 @@ const completedLevels = {
 const quizScores = []
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Add entrance animations
-  animateQuizElements()
-
-  // Initialize the quiz
-  loadQuestion()
-
+  // Show welcome screen instead of immediately starting the quiz
+  showWelcomeScreen()
+  
   // Add event listeners to difficulty buttons
   const difficultyBtns = document.querySelectorAll(".difficulty-btn")
   difficultyBtns.forEach((btn) => {
@@ -160,6 +158,136 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 })
+
+function showWelcomeScreen() {
+  // Add entrance animations
+  animateQuizElements()
+  
+  const quizContent = document.getElementById("quiz-content")
+  quizContent.innerHTML = `
+    <div class="quiz-welcome">
+      <h2>Test Your Knowledge of Animal Farm</h2>
+      <div class="welcome-image">
+        <img src="/placeholder.svg?height=200&width=200" alt="Animal Farm Quiz" />
+      </div>
+      <p>Are you ready to test your understanding of George Orwell's classic allegory?</p>
+      <p>This quiz will challenge your knowledge of the characters, events, and symbolism in Animal Farm.</p>
+      <div class="quiz-instructions">
+        <h3>How it works:</h3>
+        <ul>
+          <li>Start with the Easy level</li>
+          <li>Score at least 60% to unlock Medium level</li>
+          <li>Score at least 60% on Medium to unlock Hard level</li>
+          <li>See how well you understand the deeper meanings of the novel</li>
+        </ul>
+      </div>
+      <button class="quiz-button start-button" onclick="startQuiz()">Begin the Quiz</button>
+    </div>
+  `
+  
+  // Add animation to welcome screen
+  setTimeout(() => {
+    const welcomeScreen = document.querySelector(".quiz-welcome")
+    welcomeScreen.style.opacity = "0"
+    welcomeScreen.style.transform = "translateY(20px)"
+    
+    setTimeout(() => {
+      welcomeScreen.style.transition = "opacity 0.8s ease, transform 0.8s ease"
+      welcomeScreen.style.opacity = "1"
+      welcomeScreen.style.transform = "translateY(0)"
+    }, 100)
+  }, 100)
+  
+  // Add CSS for welcome screen
+  const styleSheet = document.styleSheets[0]
+  const welcomeStyles = `
+    .quiz-welcome {
+      text-align: center;
+      padding: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .quiz-welcome h2 {
+      color: #97171d;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    
+    .welcome-image {
+      margin: 30px auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(151, 23, 29, 0.3);
+      border: 5px solid #97171d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .welcome-image img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .quiz-welcome p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .quiz-instructions {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: left;
+      border-left: 4px solid #97171d;
+    }
+    
+    .quiz-instructions h3 {
+      color: #97171d;
+      margin-top: 0;
+    }
+    
+    .quiz-instructions ul {
+      padding-left: 20px;
+    }
+    
+    .quiz-instructions li {
+      margin-bottom: 10px;
+    }
+    
+    .start-button {
+      font-size: 20px;
+      padding: 15px 40px;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+    }
+  `
+  
+  styleSheet.insertRule(welcomeStyles, styleSheet.cssRules.length)
+}
+
+function startQuiz() {
+  quizStarted = true
+  
+  // Animate transition from welcome screen to quiz
+  const quizContent = document.getElementById("quiz-content")
+  quizContent.style.opacity = "0"
+  quizContent.style.transform = "translateY(20px)"
+  
+  setTimeout(() => {
+    // Initialize the quiz
+    loadQuestion()
+    
+    // Animate back in
+    quizContent.style.opacity = "1"
+    quizContent.style.transform = "translateY(0)"
+  }, 300)
+}
 
 function animateQuizElements() {
   // Animate difficulty buttons
@@ -186,17 +314,6 @@ function animateQuizElements() {
     progressBar.style.transition = "width 0.8s ease-in-out"
     progressBar.style.width = `${(currentQuestion / quizQuestions[currentDifficulty].length) * 100}%`
   }, 500)
-
-  // Animate quiz content
-  const quizContent = document.getElementById("quiz-content")
-  quizContent.style.opacity = "0"
-  quizContent.style.transform = "translateY(20px)"
-
-  setTimeout(() => {
-    quizContent.style.transition = "opacity 0.5s ease, transform 0.5s ease"
-    quizContent.style.opacity = "1"
-    quizContent.style.transform = "translateY(0)"
-  }, 700)
 }
 
 function setDifficulty(difficulty) {
@@ -227,7 +344,12 @@ function setDifficulty(difficulty) {
     currentQuestion = 0
     score = 0
     answered = false
-    loadQuestion()
+    
+    if (quizStarted) {
+      loadQuestion()
+    } else {
+      showWelcomeScreen()
+    }
 
     // Animate back in
     quizContent.style.opacity = "1"
@@ -497,7 +619,7 @@ function restartQuiz() {
   setTimeout(() => {
     currentQuestion = 0
     score = 0
-    loadQuestion()
+    showWelcomeScreen()
 
     quizContent.style.opacity = "1"
   }, 300)

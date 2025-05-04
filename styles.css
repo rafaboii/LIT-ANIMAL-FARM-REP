@@ -70,7 +70,7 @@ nav a.active::after {
   width: 100%;
 }
 
-/* Carousel Styles */
+/* Carousel Styles - FIXED AND IMPROVED */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -93,11 +93,8 @@ nav a.active::after {
   flex-shrink: 0;
   background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   color: white;
   position: relative;
   transition: opacity 0.5s ease;
@@ -111,16 +108,23 @@ nav a.active::after {
   right: 0;
   bottom: 0;
   background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
-  z-index: -1;
+  z-index: 0;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 800px; /* Limit width for better readability */
+  width: 100%;
 }
 
 .slide h2 {
   color: white;
   font-size: 3.5vw;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  max-width: 80%;
-  text-align: center;
   line-height: 1.4;
   letter-spacing: 1px;
   animation: fadeInUp 1s ease-out;
@@ -143,7 +147,7 @@ nav a.active::after {
   font-size: 18px;
   border: none;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 20px;
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 4px;
@@ -152,10 +156,11 @@ nav a.active::after {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  display: inline-block; /* Makes button size match content */
 }
 
-.slide:hover .cta-button {
-  opacity: 1; /* Show on hover */
+.slide.active .cta-button {
+  opacity: 1; /* Show on active slide */
   transform: translateY(0);
   animation: pulse 2s infinite;
 }
@@ -287,6 +292,130 @@ nav a.active::after {
   }
 }
 
+/* New Landing Page Styles */
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.welcome-text h3 {
+  color: #97171d;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.welcome-text p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.welcome-image {
+  display: flex;
+  justify-content: center;
+}
+
+.rounded-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.rounded-image:hover {
+  transform: scale(1.03);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  background-color: #f5f0e1;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #97171d;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.quote-banner {
+  background-color: #97171d;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.quote-banner blockquote {
+  font-size: 28px;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.4;
+}
+
+.quote-banner cite {
+  font-size: 18px;
+  font-style: normal;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
 /* Main Content Styles */
 .main-content {
   padding: 50px 5%;
@@ -348,6 +477,78 @@ nav a.active::after {
   padding: 40px;
 }
 
+/* Improved Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  nav {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    margin: 5px;
+    font-size: 16px;
+    padding-right: 10px;
+  }
+
+  .slide h2 {
+    font-size: 24px;
+  }
+
+  .welcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-image {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .carousel-container {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide h2 {
+    font-size: 20px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .section-content {
+    padding: 20px;
+  }
+
+  .carousel-container {
+    height: 70vh;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+
+  .quote-banner blockquote {
+    font-size: 22px;
+  }
+}
+
+/* Keep all the other styles from the original file below this line */
 /* Character Bio Styles */
 .character-bio {
   display: flex;
@@ -977,98 +1178,4 @@ nav a.active::after {
   background-color: #7a1217;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(151, 23, 29, 0.4);
-}
-
-/* Improved Responsive Styles */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  nav {
-    margin-top: 15px;
-    width: 100%;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    margin: 5px;
-    font-size: 16px;
-    padding-right: 10px;
-  }
-
-  .slide h2 {
-    font-size: 24px;
-    max-width: 90%;
-  }
-
-  .character-bio {
-    flex-direction: column;
-  }
-
-  .character-list {
-    width: 100%;
-    margin-bottom: 20px;
-    margin-right: 0;
-  }
-
-  .character-details {
-    flex-direction: column;
-  }
-
-  .character-image {
-    margin-right: 0;
-    margin-bottom: 20px;
-    width: 200px;
-    height: 200px;
-  }
-
-  .character-info h3 {
-    font-size: 36px;
-  }
-
-  .character-info .key-characteristics {
-    font-size: 20px;
-  }
-
-  .quotes-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .theme-examples {
-    flex-direction: column;
-  }
-
-  .carousel-container {
-    height: 80vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .slide h2 {
-    font-size: 20px;
-  }
-
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .section-content {
-    padding: 20px;
-  }
-
-  .carousel-container {
-    height: 70vh;
-  }
-
-  .character-info h3 {
-    font-size: 28px;
-  }
-
-  .character-info .key-characteristics {
-    font-size: 18px;
-  }
 }
