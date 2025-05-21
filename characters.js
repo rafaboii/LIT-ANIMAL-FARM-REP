@@ -105,7 +105,7 @@ function getCharacterData(character) {
     napoleon: {
       name: "Napoleon",
       image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg",
+        "images/napoleon.jpg",
       description:
         "Napoleon is a large, fierce-looking Berkshire boar who is the main antagonist of Animal Farm. Based on Joseph Stalin, Napoleon uses military force (his nine loyal attack dogs) to intimidate the other animals and consolidate his power.",
       characteristics: [
