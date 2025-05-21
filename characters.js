@@ -121,7 +121,7 @@ function getCharacterData(character) {
     snowball: {
       name: "Snowball",
       image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg",
+        "images/snowball.jpg",
       description:
         "Snowball is a young, intelligent, and idealistic pig who is one of the leaders of the revolution. Based on Leon Trotsky, Snowball is a brilliant orator and planner who genuinely believes in the principles of Animalism and works to improve the farm.",
       characteristics: [
