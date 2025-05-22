@@ -153,135 +153,135 @@ function getCharacterData(character) {
       image:
         "images/clover.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Clover is a gentle, caring cart-horse who plays a maternal role on Animal Farm. Loyal and hardworking, she represents the female working class and is deeply saddened by the corruption of the revolution, though she lacks the education to challenge it directly.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Kind and nurturing",
+        "Loyal yet questioning",
+        "Lacks education and critical thinking",
+        "Symbol of silent suffering and disillusionment",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Clover represents the proletariat who remain faithful to the cause but are powerless to stop its betrayal. Although she notices the changes in the commandments and the pigs’ behavior, she is unable to articulate her doubts and ultimately accepts the new reality with resignation.",
     },
     benjamin: {
       name: "Benjamin",
       image:
         "images/benjamin.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Benjamin is a cynical, elderly donkey who is one of the oldest animals on the farm. He rarely speaks, but when he does, it with is dry wit and skepticism, showing his belief that no true change will ever come, regardless of who is in charge.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Intelligent but pessimistic",
+        "Loyal yet emotionally detached",
+        "Deeply skeptical of authority",
+        "Rarely acts, even when he understands the truth",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Benjamin represents the intellectual class who recognize tyranny but choose not to act. Although he understands what is happening on the farm, his fatalism and inaction allow the pigs' oppression to continue unchallenged.",
     },
     squealer: {
       name: "Squealer",
       image:
         "images/squealer.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Squealer is a small, fat pig with a shrill voice who serves as Napoleon’s chief propagandist. He manipulates language to justify the actions of the pigs and convince the other animals that everything is being done for their benefit.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Persuasive and deceptive",
+        "Highly intelligent and articulate",
+        "Loyal mouthpiece of the regime",
+        "Twists truth to control perception",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Squealer represents propaganda and the media used to manipulate and control public opinion. He constantly rewrites history and alters the commandments, ensuring that the animals remain confused, misinformed, and obedient to Napoleon’s rule.",
     },
     mollie: {
       name: "Mollie",
       image:
         "images/mollie.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Mollie is a vain, shallow white mare who enjoys ribbons, sugar, and attention from humans. She struggles to adapt to life under animal rule and eventually abandons the farm in search of comfort and luxury.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Self-centered and materialistic",
+        "Frivolous and easily distracted",
+        "Resistant to change",
+        "Values comfort over freedom",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Mollie represents the bourgeoisie who resist revolution because it threatens their privileged lifestyle. Her departure from the farm symbolizes those who flee a new regime when it demands sacrifice and hard work over personal pleasure.",
     },
     oldmajor: {
       name: "Old Major",
       image:
         "images/old-major.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Old Major is an elderly, wise Middle White boar who inspires the animals to rebel with his dream of an equal society. Based on Karl Marx and Vladimir Lenin, he plants the ideological seeds of the revolution but dies before seeing it take place.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Wise and persuasive",
+        "Idealistic and visionary",
+        "Respected by all animals",
+        "Serves as the philosophical foundation of the rebellion",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Old Major represents the revolutionary thinkers whose ideas inspire change but are later distorted by those in power. His teachings are manipulated by Napoleon and the pigs to justify a regime completely opposed to his original vision of equality and unity.",
     },
     mrjones: {
       name: "Mr. Jones",
       image:
         "images/jones.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Mr. Jones is the often-drunk farmer who originally runs Manor Farm before being overthrown by the animals. He is careless and neglectful, which sparks the rebellion of animals against human rule.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Irresponsible and cruel",
+        "Neglectful of the animals' needs",
+        "Represents oppressive authority",
+        "Eventually powerless and forgotten",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Mr. Jones represents Tsar Nicholas II and the corrupt, ineffective leadership that sparked the Russian Revolution. His downfall marks the beginning of the animals’ fight for freedom, though his misrule is eventually replaced by an equally oppressive regime under Napoleon.",
     },
     pilkington: {
       name: "Mr. Pilkington",
       image:
         "images/pilkington.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Mr. Pilkington is the easygoing and crafty owner of Foxwood, a neighboring farm that represents the capitalist countries of the West. He maintains a complicated relationship with Animal Farm, eventually allying with Napoleon for mutual benefit.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Shrewd and diplomatic",
+        "Represents Western political powers",
+        "Willing to cooperate when profitable",
+        "Initially skeptical but later supportive",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Mr. Pilkington represents the Western allies, particularly Britain and the United States, who at first oppose the Soviet regime but later collaborate with it when convenient. His eventual camaraderie with Napoleon highlights the hypocrisy and self-interest of political alliances.",
     },
     frederick: {
       name: "Mr. Frederick",
       image:
         "images/frederick.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Mr. Frederick is the tough, ruthless owner of Pinchfield, a neighboring farm known for its harsh conditions. He tricks Napoleon with counterfeit money and later attacks Animal Farm, showing his treacherous and violent nature.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Cruel and untrustworthy",
+        "Cunning and manipulative",
+        "Harsh toward his own workers",
+        "Aggressive and warlike",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Mr. Frederick represents Adolf Hitler and Nazi Germany, particularly in reference to the broken non-aggression pact with Stalin. His betrayal and attack on Animal Farm mirror the Nazi invasion of the Soviet Union, exposing the dangers of misplaced trust in authoritarian regimes.",
     },
     moses: {
       name: "Moses",
       image:
         "images/moses.jpg",
       description:
-        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+        'Moses is a tame raven who tells the animals stories about Sugarcandy Mountain, a paradise where animals go when they die. He disappears after the rebellion but later returns, continuing to preach his tales despite the disapproval of pigs.',
       characteristics: [
-        "Immensely strong and hardworking",
-        "Loyal and dedicated",
-        "Limited intelligence but good-hearted",
-        "Trusting to a fault",
+        "Religious and mysterious",
+        "Persuasive storyteller",
+        "Detached from the animals’ struggles",
+        "Used to maintain hope and obedience",
       ],
       significance:
-        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+        "Moses represents organized religion, particularly the Russian Orthodox Church, which was suppressed and later tolerated by the Soviet regime. His tales of Sugarcandy Mountain offer the animals comfort and a distraction from their suffering, helping to maintain control.",
     }
   }
 
