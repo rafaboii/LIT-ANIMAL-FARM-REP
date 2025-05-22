@@ -136,7 +136,7 @@ function getCharacterData(character) {
     boxer: {
       name: "Boxer",
       image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Background.jpg-NpcfRZ9ph5r5ccukhTwKPwuxvixR0R.jpeg",
+        "images/boxer.jpg",
       description:
         'Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
       characteristics: [
@@ -148,7 +148,141 @@ function getCharacterData(character) {
       significance:
         "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
     },
-    // Add the rest of the characters here
+    clover: {
+      name: "Clover",
+      image:
+        "images/clover.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    benjamin: {
+      name: "Benjamin",
+      image:
+        "images/benjamin.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    squealer: {
+      name: "Squealer",
+      image:
+        "images/squealer.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    mollie: {
+      name: "Mollie",
+      image:
+        "images/mollie.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    oldmajor: {
+      name: "Old Major",
+      image:
+        "images/old-major.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    mrjones: {
+      name: "Mr. Jones",
+      image:
+        "images/jones.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    pilkington: {
+      name: "Mr. Pilkington",
+      image:
+        "images/pilkington.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    frederick: {
+      name: "Mr. Frederick",
+      image:
+        "images/frederick.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    },
+    moses: {
+      name: "Moses",
+      image:
+        "images/moses.jpg",
+      description:
+        'EDIT TEXT! Boxer is a large, powerful cart-horse known for his incredible strength and work ethic. He is devoted to Animal Farm and adopts the personal mottos "I will work harder" and later "Napoleon is always right."',
+      characteristics: [
+        "Immensely strong and hardworking",
+        "Loyal and dedicated",
+        "Limited intelligence but good-hearted",
+        "Trusting to a fault",
+      ],
+      significance:
+        "Boxer represents the loyal working class who support the revolution with their labor but are ultimately betrayed by the leadership. His sale to the knacker when he is no longer useful symbolizes how totalitarian regimes exploit and discard workers.",
+    }
   }
 
   return characters[character] || characters.napoleon
