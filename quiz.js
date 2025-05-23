@@ -144,12 +144,17 @@ const completedLevels = {
   medium: false,
   hard: false,
 }
-const quizScores = []
+const quizScores = {
+  easy: { score: 0, total: 0, percentage: 0 },
+  medium: { score: 0, total: 0, percentage: 0 },
+  hard: { score: 0, total: 0, percentage: 0 },
+}
+const quizHistory = []
 
 document.addEventListener("DOMContentLoaded", () => {
   // Show welcome screen instead of immediately starting the quiz
   showWelcomeScreen()
-  
+
   // Add event listeners to difficulty buttons
   const difficultyBtns = document.querySelectorAll(".difficulty-btn")
   difficultyBtns.forEach((btn) => {
@@ -162,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function showWelcomeScreen() {
   // Add entrance animations
   animateQuizElements()
-  
+
   const quizContent = document.getElementById("quiz-content")
   quizContent.innerHTML = `
     <div class="quiz-welcome">
@@ -184,20 +189,20 @@ function showWelcomeScreen() {
       <button class="quiz-button start-button" onclick="startQuiz()">Begin the Quiz</button>
     </div>
   `
-  
+
   // Add animation to welcome screen
   setTimeout(() => {
     const welcomeScreen = document.querySelector(".quiz-welcome")
     welcomeScreen.style.opacity = "0"
     welcomeScreen.style.transform = "translateY(20px)"
-    
+
     setTimeout(() => {
       welcomeScreen.style.transition = "opacity 0.8s ease, transform 0.8s ease"
       welcomeScreen.style.opacity = "1"
       welcomeScreen.style.transform = "translateY(0)"
     }, 100)
   }, 100)
-  
+
   // Add CSS for welcome screen
   const styleSheet = document.styleSheets[0]
   const welcomeStyles = `
@@ -267,22 +272,26 @@ function showWelcomeScreen() {
       animation: pulse 2s infinite;
     }
   `
-  
-  styleSheet.insertRule(welcomeStyles, styleSheet.cssRules.length)
+
+  try {
+    styleSheet.insertRule(welcomeStyles, styleSheet.cssRules.length)
+  } catch (e) {
+    console.log("Could not insert welcome styles:", e)
+  }
 }
 
 function startQuiz() {
   quizStarted = true
-  
+
   // Animate transition from welcome screen to quiz
   const quizContent = document.getElementById("quiz-content")
   quizContent.style.opacity = "0"
   quizContent.style.transform = "translateY(20px)"
-  
+
   setTimeout(() => {
     // Initialize the quiz
     loadQuestion()
-    
+
     // Animate back in
     quizContent.style.opacity = "1"
     quizContent.style.transform = "translateY(0)"
@@ -344,7 +353,7 @@ function setDifficulty(difficulty) {
     currentQuestion = 0
     score = 0
     answered = false
-    
+
     if (quizStarted) {
       loadQuestion()
     } else {
@@ -518,8 +527,15 @@ function showResults() {
   // Mark level as completed
   completedLevels[currentDifficulty] = true
 
-  // Save score
-  quizScores.push({
+  // Save score for this difficulty level
+  quizScores[currentDifficulty] = {
+    score: score,
+    total: questions.length,
+    percentage: percentage,
+  }
+
+  // Add to history
+  quizHistory.push({
     difficulty: currentDifficulty,
     score: score,
     total: questions.length,
@@ -586,12 +602,13 @@ function showResults() {
         <div class="quiz-scores-history">
           <h4>Your Quiz History</h4>
           <ul class="scores-list">
-            ${quizScores
+            ${Object.entries(quizScores)
+              .filter(([_, data]) => data.total > 0)
               .map(
-                (record) => `
+                ([level, data]) => `
               <li>
-                <span>${record.difficulty.charAt(0).toUpperCase() + record.difficulty.slice(1)} Level:</span>
-                <span>${record.score}/${record.total} (${record.percentage}%)</span>
+                <span>${level.charAt(0).toUpperCase() + level.slice(1)} Level:</span>
+                <span>${data.score}/${data.total} (${data.percentage}%)</span>
               </li>
             `,
               )
@@ -617,9 +634,23 @@ function restartQuiz() {
   quizContent.style.opacity = "0"
 
   setTimeout(() => {
+    // Reset to easy difficulty
+    currentDifficulty = "easy"
+
+    // Update active difficulty button
+    document.querySelectorAll(".difficulty-btn").forEach((btn) => {
+      btn.classList.remove("active")
+    })
+    document.querySelector('.difficulty-btn[data-difficulty="easy"]').classList.add("active")
+
+    // Reset question and score
     currentQuestion = 0
     score = 0
-    showWelcomeScreen()
+    answered = false
+
+    // Start the quiz directly instead of showing welcome screen
+    quizStarted = true
+    loadQuestion()
 
     quizContent.style.opacity = "1"
   }, 300)
@@ -737,5 +768,9 @@ window.addEventListener("load", () => {
   `
 
   // Add the styles to the stylesheet
-  styleSheet.insertRule(newStyles, styleSheet.cssRules.length)
+  try {
+    styleSheet.insertRule(newStyles, styleSheet.cssRules.length)
+  } catch (e) {
+    console.log("Could not insert animation styles:", e)
+  }
 })
