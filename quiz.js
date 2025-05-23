@@ -171,22 +171,25 @@ function showWelcomeScreen() {
   const quizContent = document.getElementById("quiz-content")
   quizContent.innerHTML = `
     <div class="quiz-welcome">
-      <h2>Test Your Knowledge of Animal Farm</h2>
+      <h1><center>Test Your Knowledge of Animal Farm</center></h1>
+        <h3><center><i>Are you ready to test your understanding of George Orwell's classic allegory?</i></center></h3>
       <div class="welcome-image">
-        <img src="/placeholder.svg?height=200&width=200" alt="Animal Farm Quiz" />
+        <img src="images/whitelogo.png" alt="Animal Farm Quiz" />
       </div>
-      <p>Are you ready to test your understanding of George Orwell's classic allegory?</p>
-      <p>This quiz will challenge your knowledge of the characters, events, and symbolism in Animal Farm.</p>
+      <h3><center>This quiz will challenge your knowledge of the characters, events, and symbolism in Animal Farm!</center></h3>
       <div class="quiz-instructions">
+      <br>
+      
         <h3>How it works:</h3>
         <ul>
-          <li>Start with the Easy level</li>
-          <li>Score at least 60% to unlock Medium level</li>
-          <li>Score at least 60% on Medium to unlock Hard level</li>
-          <li>See how well you understand the deeper meanings of the novel</li>
+                <li>Start with the <u>Easy level</u></li>
+                <li>Score at least <b>60%</b> to unlock <u>Medium level</u></li>
+                <li>Score at least <b>60%</b> on Medium to unlock <u>Hard level</u></li>
+                <li><b>See how well you understand the deeper meanings of the novel 📕 </b></li>
         </ul>
+        <br><br>
       </div>
-      <button class="quiz-button start-button" onclick="startQuiz()">Begin the Quiz</button>
+      <center><button class="quiz-button start-button" onclick="startQuiz()">Begin the Quiz</button></center>
     </div>
   `
 
@@ -221,8 +224,8 @@ function showWelcomeScreen() {
     
     .welcome-image {
       margin: 30px auto;
-      width: 200px;
-      height: 200px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(151, 23, 29, 0.3);
@@ -230,11 +233,17 @@ function showWelcomeScreen() {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 20px;
+      background-color: #f9f7f1;
     }
-    
+
     .welcome-image img {
-      width: 100%;
-      height: auto;
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     
     .quiz-welcome p {
