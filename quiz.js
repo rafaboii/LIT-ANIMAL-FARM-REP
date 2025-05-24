@@ -602,17 +602,21 @@ function showResults() {
     quizContent.innerHTML = `
       <div class="quiz-results">
         <h3>Quiz Results - ${currentDifficulty.charAt(0).toUpperCase() + currentDifficulty.slice(1)} Level</h3>
+        <br>
         <div class="quiz-score">
           <div class="score-circle">
             <div class="score-number">${percentage}%</div>
           </div>
-          <div class="score-text">You scored ${score} out of ${questions.length}</div>
+          <div class="score-text"><i>You scored ${score} out of ${questions.length}</i></div>
         </div>
         <div class="quiz-feedback ${feedbackClass}">${feedback}</div>
+        <br>
         <button class="quiz-button" onclick="restartQuiz()">Restart Quiz</button>
         
         <div class="quiz-scores-history">
+        <br>
           <h4>Your Quiz History</h4>
+          
           <ul class="scores-list">
             ${Object.entries(quizScores)
               .filter(([_, data]) => data.total > 0)
