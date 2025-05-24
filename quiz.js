@@ -173,10 +173,13 @@ function showWelcomeScreen() {
     <div class="quiz-welcome">
       <h1><center>Test Your Knowledge of Animal Farm</center></h1>
         <h3><center><i>Are you ready to test your understanding of George Orwell's classic allegory?</i></center></h3>
+        <br>
       <div class="welcome-image">
         <img src="images/whitelogo.png" alt="Animal Farm Quiz" />
       </div>
+      <br>
       <h3><center>This quiz will challenge your knowledge of the characters, events, and symbolism in Animal Farm!</center></h3>
+     
       <div class="quiz-instructions">
       <br>
       

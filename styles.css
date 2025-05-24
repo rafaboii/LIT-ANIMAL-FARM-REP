@@ -1328,6 +1328,13 @@ footer p {
   cursor: not-allowed;
 }
 
+.welcome-image img {
+  width: 500px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 /* Thematic Analysis Styles */
 .themes-introduction {
   margin-bottom: 30px;
